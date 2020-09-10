@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+echo
+echo "PHP CS Fixer"
+echo
+./vendor/bin/php-cs-fixer fix --dry-run -v --allow-risky=yes --config=.php_cs.php
+
+echo
+echo
+
+echo "PHPStan"
+echo
+./vendor/bin/phpstan analyse src/ -c phpstan.neon --memory-limit=1G --level 8
+
+echo "Psalm"
+echo
+./vendor/bin/psalm --show-info=true

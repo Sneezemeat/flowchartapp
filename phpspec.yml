@@ -1,0 +1,22 @@
+suites:
+    default:
+      namespace: App
+      psr_4_prefix: App
+
+matchers:
+  - spec\App\Matcher\RandomUuidMatcher
+
+formatter.name: nyan.dino
+
+extensions:
+    PhpSpec\NyanFormattersExtension\Extension: ~
+    FriendsOfPhpSpec\PhpSpec\CodeCoverage\CodeCoverageExtension:
+      format:
+        - php
+      output:
+        php: /tmp/coverage_phpspec.cov
+      blacklist:
+        - src/Migrations
+        - src/DataFixtures
+      blacklist_files:
+        - src/Kernel.php

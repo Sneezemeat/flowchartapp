@@ -1,0 +1,4 @@
+api_logout:
+    path: /logout
+api_login:
+    path: /login
